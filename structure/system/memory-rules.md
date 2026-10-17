@@ -1,83 +1,33 @@
----
-type: rules
-status: active
-updated: 2026-08-25
-tags: [system, write]
----
-
 # Memory rules
 
-How to write to this tree. Load before extracting or updating memory. Paths in this file are relative to the memory tree root.
+Save only information that will help future work: confirmed facts, explicit decisions, current project state, useful findings, and stated preferences. Do not save every conversation.
 
-## Source of truth
+## Choose the file
 
-- Durable knowledge lives in Markdown files in this tree (or in the project's ordinary files).
-- Do not treat chat transcripts, embeddings, or vendor "memory" as authoritative.
-- If two sources disagree, update the Markdown so it is correct.
-
-## What to store
-
-Store when at least one is true:
-
-- A fact about the person, a project, or a topic will still matter later
-- A decision was made and will constrain future work
-- Project state changed
-- A preference or communication rule was stated or corrected
-- A source or finding is worth revisiting
-
-Do not store:
-
-- The conversation itself, unless a log entry is genuinely useful
-- Information already obvious from code, README, or tickets
-- Guesses, discarded plans, and one-off debugging
-- Secrets (API keys, passwords, private tokens)
-
-## Where to put it
-
-| Information | File |
+| Information | File, relative to this folder |
 | --- | --- |
-| Identity and standing facts | `person/profile.md` |
-| Recurring defaults | `person/preferences.md` |
+| Standing personal facts | `person/profile.md` |
+| Recurring choices | `person/preferences.md` |
 | Tone and format | `person/communication.md` |
-| What a project is | `projects/<name>/overview.md` |
-| Where it stands | `projects/<name>/state.md` |
-| What was chosen and why | `projects/<name>/decisions.md` |
-| Sources, findings, questions | `projects/<name>/research.md` or `knowledge/<topic>/` |
-| Open work | `projects/<name>/tasks.md` |
-| What happened today | `projects/<name>/log/YYYY-MM-DD.md` |
+| Project purpose and scope | `projects/<name>/overview.md` |
+| Current position and blockers | `projects/<name>/state.md` |
+| Explicit choices and reasons | `projects/<name>/decisions.md` |
+| Sources, findings, and open questions | `projects/<name>/research.md` |
+| Next actions | `projects/<name>/tasks.md` |
+| Optional chronology | `projects/<name>/log/YYYY-MM-DD.md` |
+| Reusable topic knowledge | `knowledge/<topic>/overview.md` |
 
-Facts, decisions, and chronology stay in different files. See [../../concepts/consolidation.md](../../concepts/consolidation.md).
+Keep facts separate from decisions. Label uncertainties as open questions or hypotheses in research notes; do not present them as facts. Logs describe what happened, while state describes what is true now.
 
-## How to update
+## Review an update
 
-- Prefer editing an existing file to creating a new one.
-- Update `profile`, `preferences`, `state`, and `overview` **in place**.
-- **Append** to `decisions.md` and to daily logs. Mark superseded decisions; do not rewrite them silently.
-- Remove done tasks from `tasks.md`.
-- Set `updated` in frontmatter on every write.
-- Add a line to [../index.md](../index.md) only when a new durable area appears.
-- Write the smallest change that makes the tree true.
+1. Propose the affected files and exact changes before editing memory.
+2. Review accuracy and remove anything unnecessary or private.
+3. Before substantial changes, make a backup copy of the folder.
+4. Apply the approved edits and review the changed files.
 
-## Promotion
+Prefer existing files. Update overview and state in place. Add dated decisions with reasons; mark superseded decisions rather than silently replacing them. Remove completed tasks. Add index links for new projects or topics.
 
-Logs may stay logs. Promote into structured files only after information has settled. A consolidation pass may propose a diff; it should not dump a transcript into `state.md`.
+When filling a template, replace its prompts and set `status: active`. If you use an `updated` field, set it to the actual date of the change. Never infer missing personal details.
 
-## Size
-
-- `state.md` should stay about one screen.
-- Daily logs can be longer; they are not default retrieval targets.
-- If a file cannot be retrieved usefully, split or cut it.
-
-## Review
-
-When an LLM writes memory, prefer a proposed diff over a silent rewrite of standing facts. Wrong memory is worse than missing memory.
-
-## Commit
-
-If this tree is a git repository, snapshot durable writes:
-
-- Read `git diff` before `git commit`. The diff *is* the review.
-- Commit when a fact, decision, preference, or state change should stick — not after every conversation.
-- Do not commit secrets or rebuildable indexes.
-
-New to git? [../../concepts/git.md](../../concepts/git.md). A repository is the folder plus a history of snapshots; GitHub is optional.
+Do not store secrets, copy entire chats into state, or duplicate material already maintained elsewhere. Never automatically publish or share memory files. Version history can be added later; reviewing files and keeping backups is enough to begin.

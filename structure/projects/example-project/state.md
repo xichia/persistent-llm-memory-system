@@ -1,31 +1,19 @@
 ---
-type: state
-status: active
-updated: 2026-08-25
-tags: [project, example, current]
+status: template
 ---
 
-# example-project — state
+# Current state
 
-Where the project stands **now**. Keep this short. When a status line dies, delete it or move the story to [log/](log/).
+Replace the prompts with confirmed current information, then set `status: active`. Keep this page brief; history belongs in the optional [log](log/README.md).
 
-## Current
+## Current position
 
-- Scaffolding the Markdown memory tree as documentation and a starter template
-- Layout is the recommended default from [structure/index.md](../../index.md)
+[What exists or has been completed?]
 
 ## Blockers
 
-- None
+[What is preventing progress? Write “None known” only if confirmed.]
 
-## Next
+## Next step
 
-- Fill `person/` with real profile data if this tree is adopted for personal use
-- Duplicate this folder for the first real project
-- Add retrieval helpers only when path + grep is no longer enough
-
-## Not current (do not revive without cause)
-
-- Building embeddings or an app around this — explicitly deferred
-
-If `state.md` starts reading like a diary, consolidation has failed. See [../../../concepts/consolidation.md](../../../concepts/consolidation.md).
+[What should the next session start with? Link to a task if useful.]

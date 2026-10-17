@@ -1,57 +1,26 @@
----
-type: rules
-status: active
-updated: 2026-08-25
-tags: [system, read]
----
-
 # Retrieval rules
 
-How to load memory into a model context. Load before searching or injecting files.
+The folder holds long-term memory. The current chat holds the working context. Choose a small set of relevant files for each task.
 
-The context window is working memory. The files you inject into it are the **working set**. Retrieve the smallest set that makes the task well-informed. Paths in this file are relative to the memory tree root.
+## Start simply
 
-## Default order
+1. Read [../index.md](../index.md).
+2. Follow the relevant project or topic path.
+3. If the path is unclear, search file names and text for a useful word or phrase.
+4. Read only the matching files or sections needed for the task.
 
-1. Read [../index.md](../index.md) if you do not already know the layout.
-2. Choose files by **path**. The hierarchy is the first classifier.
-3. Filter on **metadata** (`type`, `status`, `tags`, `updated`) when listing candidates.
-4. **Full-text search** if the path is unknown. See [../../retrieval/full-text-search.md](../../retrieval/full-text-search.md).
-5. **Semantic search** only if keyword search misses. See [../../retrieval/semantic-search.md](../../retrieval/semantic-search.md).
-6. Inject a handful of files (or sections), each with its path.
+For a project, begin with its overview, state, and tasks. Read decisions before changing direction. Use research for sources and unanswered questions. Open logs only when chronology matters.
 
-## What to load for common tasks
+For personal writing, read communication preferences and any relevant stated preferences. Do not load personal details for unrelated tasks.
 
-| Task | Load first |
-| --- | --- |
-| Continue a project | `overview.md`, `state.md`, `tasks.md`; `decisions.md` if changing course |
-| Write as this person | `person/communication.md`, then `preferences.md` |
-| Personal question | `person/profile.md` and `preferences.md` |
-| "Why did we…?" | `decisions.md`, then a log if the rationale is thin |
-| Research a topic | `knowledge/<topic>/`, then project `research.md` |
-| New agent run | `state.md` + `tasks.md` + these rules |
-| Anything | Do **not** load the whole tree |
+## Use context carefully
 
-## What not to load by default
+- Keep file paths attached to retrieved information so updates can return to the right place.
+- Ignore unfilled template prompts as evidence.
+- Read a few small files instead of the whole folder.
+- If files disagree, flag the conflict and check the evidence; a newer date alone does not prove a statement correct.
+- If a useful fact is missing, ask or label it unknown. Do not invent it.
 
-- Daily logs (`log/YYYY-MM-DD.md`) — chronology only
-- Archived projects (`status: archived`)
-- Templates with no real content
-- Duplicate files that restated something already in `state.md`
+Extra metadata or advanced search is optional for a larger tree. Start with the index, paths, and text search.
 
-## Injection format
-
-When placing files in context:
-
-- Include the **path** so updates can go back to the same file
-- Prefer whole small files over many tiny chunks
-- If a file is large, inject the relevant section and say so
-- If retrieved files conflict, prefer structured files over logs, and newer `updated` over older — then fix the files
-
-## Budget
-
-Aim for a few files, not dozens. If you need more than about five, the tree is probably missing a summary (`state.md` or the index) or the task is actually several tasks.
-
-## After the task
-
-If something durable changed, follow [memory-rules.md](memory-rules.md) and write it back. Retrieval without a write path is amnesia with extra steps.
+After work, propose any durable updates using [memory-rules.md](memory-rules.md).

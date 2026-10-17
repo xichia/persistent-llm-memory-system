@@ -1,39 +1,29 @@
 ---
-type: knowledge
 status: template
-updated: 2026-08-25
-tags: [knowledge, template]
 ---
 
-# Topic (template)
+# Topic
 
-One folder per topic that should outlive a single project. Duplicate this folder (`knowledge/<topic-name>/`) rather than dumping unrelated notes into one file.
+Optional reusable knowledge beyond one project. Rename this folder for the subject, replace prompts, link it from [index.md](../../index.md), and set `status: active`.
 
-Project-specific findings stay in that project's `research.md`. Promote a finding here only when it is reusable.
+## Subject
 
-## What this is
+[What is this note about, and when is it useful?]
 
-A durable note on a subject: a concept, a tool, a domain, a person-in-the-world (not the owner — those stay in `person/`).
+## Confirmed notes
 
-## Notes
-
-- …
+[Useful findings, with sources where possible.]
 
 ## Sources
 
-- …
+[Links or references and when they were checked.]
 
-## Hypotheses
+## Hypotheses and open questions
 
-- …
+[Clearly label ideas that still need checking.]
 
-## Open questions
+## Related projects or topics
 
-- …
+[Links to relevant files in this folder tree.]
 
-## Related
-
-- Projects that use this: `../../projects/…`
-- Nearby topics: `../other-topic/`
-
-Keep topics small. If a folder grows many unrelated headings, split it.
+Keep unrelated topics in separate folders. Project-specific findings can stay in the project's research file.

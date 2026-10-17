@@ -1,39 +1,25 @@
 ---
-type: communication
 status: template
-updated: 2026-08-25
-tags: [person, tone, format]
 ---
 
 # Communication
 
-How to talk to this person. Fill in the blanks, then set `status: active`. Load this when drafting replies, docs, or commit messages for them.
+Optional guidance for responses and drafts. Replace prompts with stated preferences, remove unused sections, and set `status: active`.
 
 ## Tone
 
-- Directness:
-- Formality:
-- Humor:
-- Use of jargon:
+[How direct, formal, or conversational should replies be?]
+
+## Detail
+
+[Brief answers or more explanation? When should Codex ask for clarification?]
 
 ## Format
 
-- Default answer shape (e.g. lead with the answer, then context)
-- When to use lists, tables, or prose
-- Code comment style they want (or: none)
-- Preferred languages for user-facing text
+[Preferred languages, lists, tables, or prose.]
 
-## Do
+## Things to avoid
 
-- …
-- …
+[Any recurring wording or presentation choices to avoid.]
 
-## Don't
-
-- Don't pad with filler or restated questions
-- Don't over-explain things they already know (see [profile.md](profile.md))
-- …
-
-## Corrections
-
-When they push back on tone or structure, update this file rather than apologizing in every future chat.
+Propose updates when the user corrects a communication preference. Do not infer preferences from a single ambiguous reaction.

@@ -1,54 +1,34 @@
----
-type: index
-status: active
-updated: 2026-08-25
-tags: [map, navigation]
----
-
 # Memory index
 
-Compact map of this tree. Load this file first when you need to know what exists without listing everything.
+Read this map first, then open only the files relevant to the task. Blank templates contain no remembered facts.
 
-In this repository the memory layout lives under `structure/`. In a live memory tree, this file sits at the root and paths look like `person/profile.md`, not `structure/person/profile.md`.
+## Start here
 
-## Person
-
-Who the memory is about, how they work, how to talk to them.
-
-- [person/profile.md](person/profile.md) — identity, context, constraints
-- [person/preferences.md](person/preferences.md) — tastes, defaults, non-negotiables
-- [person/communication.md](person/communication.md) — tone, format, what to skip
+- [README.md](README.md) — how to use this folder with Codex
+- [AGENTS.md](AGENTS.md) — instructions for Codex
 
 ## Projects
 
-One folder per project. Copy `example-project/` to start another.
+Rename the example folder for your first project and update these links. Add one group of links per new project.
 
-- [projects/example-project/overview.md](projects/example-project/overview.md) — what it is
-- [projects/example-project/state.md](projects/example-project/state.md) — where it stands
-- [projects/example-project/decisions.md](projects/example-project/decisions.md) — what was chosen and why
-- [projects/example-project/research.md](projects/example-project/research.md) — sources and findings
-- [projects/example-project/tasks.md](projects/example-project/tasks.md) — open work
-- [projects/example-project/log/](projects/example-project/log/) — chronology (`YYYY-MM-DD.md`)
+- [Overview](projects/example-project/overview.md) — purpose, scope, desired outcome
+- [State](projects/example-project/state.md) — current position and blockers
+- [Tasks](projects/example-project/tasks.md) — next actions
+- [Decisions](projects/example-project/decisions.md) — choices and reasons
+- [Research](projects/example-project/research.md) — sources, findings, and open questions
+- [Log](projects/example-project/log/README.md) — optional chronological notes
+
+## Optional personal context
+
+- [Profile](person/profile.md) — standing facts and constraints
+- [Preferences](person/preferences.md) — recurring choices
+- [Communication](person/communication.md) — tone and format
 
 ## Knowledge
 
-Topics that outlive a single project. One folder per topic.
-
-- [knowledge/topic/overview.md](knowledge/topic/overview.md) — template for a topic area (duplicate the folder, do not pile topics into one file)
+- [Topic template](knowledge/topic/overview.md) — reusable notes beyond one project
 
 ## System
 
-Rules for writing and reading this tree. Load these when creating, updating, or retrieving memory.
-
-- [system/memory-rules.md](system/memory-rules.md) — what to store, where, and how to update
-- [system/retrieval-rules.md](system/retrieval-rules.md) — what to load for a given task
-
-## How to use this map
-
-- For a personal question, start with `person/`.
-- For continuing a project, start with that project's `state.md` and `overview.md`.
-- For "why did we do it this way?", start with `decisions.md`.
-- For "what do we know about X?", start with `knowledge/` then project `research.md`.
-- Do not load logs unless you need chronology.
-
-Keep this index short. When a new durable area appears, add one line here — not a summary of the files it points to.
+- [Memory rules](system/memory-rules.md) — what to save and how to review changes
+- [Retrieval rules](system/retrieval-rules.md) — how to choose context

@@ -1,38 +1,24 @@
 ---
-type: profile
 status: template
-updated: 2026-08-25
-tags: [person, identity]
 ---
 
 # Profile
 
-Durable facts about the person this memory tree belongs to. Fill in the blanks, then set `status: active`. Update in place when something changes. Do not turn this file into a biography or a chat log.
+Optional standing facts about the person this folder belongs to. Fill in only what helps future work, remove unused prompts, and set `status: active`. Do not infer missing details or include secrets.
 
-## Identity
+## About me
 
-- **Name:**
-- **How to refer to them:**
-- **Time zone / location:**
-- **Languages:**
-- **Pronouns:** (only if they care)
+- Name or how to address me: [Optional]
+- Time zone: [Optional]
+- Languages: [Optional]
+- Work or interests relevant to these projects: [Optional]
 
-## Context
+## Constraints
 
-- **Work:** role, domain, current employer or independent
-- **Active projects:** links into `../projects/`
-- **Tools they actually use:** editor, OS, models, stack
-- **Constraints:** time, budget, hardware, compliance, accessibility
+[Time, budget, accessibility, or other limits that should guide the work.]
 
-## Standing facts worth repeating
+## Active projects
 
-Short bullets the model should not have to re-ask:
+[Links to the relevant project overviews.]
 
-- …
-- …
-
-## Do not store here
-
-Preferences belong in [preferences.md](preferences.md). Tone and format belong in [communication.md](communication.md). Project detail belongs under `../projects/`. Chronology belongs in logs.
-
-When a fact here is superseded, replace it. Leave history in a log if the change itself matters.
+Preferences belong in [preferences.md](preferences.md); tone and format belong in [communication.md](communication.md). Update facts in place when they change.

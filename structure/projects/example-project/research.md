@@ -1,34 +1,25 @@
 ---
-type: research
-status: active
-updated: 2026-08-25
-tags: [project, example, research]
+status: template
 ---
 
-# example-project — research
+# Research
 
-Sources, findings, hypotheses, and unresolved questions. Separate from [decisions.md](decisions.md): research can be wrong; decisions are commitments.
+Replace prompts with useful notes and sources, then set `status: active`. Keep evidence separate from guesses and commitments.
 
 ## Sources
 
-- This repository's own [concepts](../../../concepts/) and [key-idea.md](../../../key-idea.md)
-- Adjacent practices: Zettelkasten, personal knowledge management, `.cursor/rules`, agent memory files, git-backed wikis
+[Source title or link, date checked, and why it matters.]
 
-## Findings
+## Confirmed findings
 
-- Hierarchy is already retrieval: a good path often beats a search
-- Conversation logs make poor default context; they need consolidation
-- Many "AI memory" products hide state in a vendor. A folder does not.
+[What does the evidence support? Point to its source.]
 
 ## Hypotheses
 
-- A `.me/` directory in a code repo is enough local memory for most engineering work, with a larger personal tree for cross-project facts
-- SQLite FTS5 will cover early search needs; embeddings only after false negatives show up
+[Ideas that need checking. These are not confirmed facts.]
 
-## Unresolved
+## Open questions
 
-- How aggressively should an agent write to the tree without review?
-- Where do secrets belong? (Probably not in this tree.)
-- One tree per person vs. one tree per household/team vs. both, linked
+[What is still unknown?]
 
-Move a finding into `decisions.md` only when it becomes a commitment. Move lasting, project-independent knowledge into [../../knowledge/](../../knowledge/).
+Record an agreed choice in [decisions.md](decisions.md). Move knowledge worth reusing across projects into a topic folder under `knowledge/`.

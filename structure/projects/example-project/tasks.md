@@ -1,27 +1,17 @@
 ---
-type: tasks
-status: active
-updated: 2026-08-25
-tags: [project, example, tasks]
+status: template
 ---
 
-# example-project — tasks
+# Tasks
 
-Open work only. Done items leave this file (a one-liner in [log/](log/) is enough if the work mattered).
+List a few concrete next actions, then set `status: active`. Remove completed items so this stays useful at the start of a new chat.
 
-## Now
+## Next
 
-- [ ] Replace example `person/` content with a real profile if adopting this tree
-- [ ] Copy `example-project/` for the first live project
+- [ ] [A concrete action and what completion looks like]
 
 ## Later
 
-- [ ] Add SQLite FTS5 if grep stops scaling
-- [ ] Consider embeddings only after FTS false negatives are real
+[Optional actions to revisit once the next work is done.]
 
-## Not doing
-
-- Hosted memory service
-- Auto-saving every transcript into structured files
-
-Tasks are not the full project history. If a task needs rationale, link to [decisions.md](decisions.md) or a log entry.
+If a task depends on a choice or evidence, link to [decisions.md](decisions.md) or [research.md](research.md).

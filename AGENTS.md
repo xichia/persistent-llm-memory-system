@@ -2,7 +2,7 @@
 
 This is a concept and starter-template repository for **persistent LLM memory**: a Markdown folder tree as long-term memory, with the model context window as working memory. It is not an application codebase.
 
-Read [README.md](README.md) and [key-idea.md](key-idea.md) before editing. Do not restate the full argument in this file.
+Read [README.md](README.md) and [key-idea.md](key-idea.md) before editing. The beginner path is [guide.md](guide.md): benefits first, a Markdown tree, and the Codex app working in a local folder. Git is optional background; do not require GitHub Desktop, VS Code, or command-line knowledge. Do not restate the full argument in this file.
 
 ## Layout
 
@@ -12,6 +12,9 @@ Read [README.md](README.md) and [key-idea.md](key-idea.md) before editing. Do no
 | `structure/` | The starter memory tree (copy this as a live tree's root) | A second copy of `concepts/` |
 | `retrieval/` | How to find files (path, metadata, FTS, embeddings) | Index databases or embedding files |
 | `use-cases/` | Where the pattern pays off | Implementation code |
+| `guide.md` | Practical beginner workflow | Git exercises or assessment paperwork |
+| `example/` | Fictional saved project context | A live project or nested Git repository |
+| `MIGRATION.md` | Edition changes and validation limits | Unchanged old course downloads |
 | `README.md` | Short human entry point and annotated map | A duplicate of every note |
 | `AGENTS.md` | Instructions for agents | The design argument |
 | `key-idea.md` | Design principles | How-to git (that is `concepts/git.md`) |

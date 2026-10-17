@@ -24,7 +24,7 @@ The unit of memory is a directory of text files. It can live in iCloud, a git re
 
 Paths, titles, tags, and full text are all queryable. Start with the folder hierarchy, then full-text search. SQLite FTS5 is a simple next step. Embeddings are optional and can be rebuilt. See [retrieval/](retrieval/).
 
-## Git-versionable
+## Optional version history
 
 Memory has history. You can see when a decision flipped, recover a deleted fact, and review what an agent wrote before accepting it.
 
@@ -32,11 +32,11 @@ A **git repository** is the memory folder plus a hidden record of snapshots (com
 
 This also makes memory *reviewable*. An LLM can propose updates; `git diff` shows the exact lines; you commit only what should stick. GitHub is optional — a website that can host a **private** copy. Git itself runs on your computer.
 
-If you have never used git, read [concepts/git.md](concepts/git.md). You need `status`, `diff`, `add`, and `commit`. You do not need branches or GitHub to get value.
+You can start with ordinary folders, review edits by reading the files, and keep a backup copy before changes. Version history is a later option; [concepts/git.md](concepts/git.md) explains it when you need it. The [practical guide](guide.md) starts with the folder workflow.
 
 ## User-controlled
 
-You decide what is stored, what is retrieved, and what is forgotten. Retention is not a product default. Nothing is uploaded to a memory service unless you choose to put the files there.
+You decide what is stored, what is retrieved, and what is forgotten. Retention is not a product default. You choose which tools can access the folder. When an online AI reads a file, its contents may be sent to that service for processing; keeping files locally does not make that processing offline.
 
 Control includes the right to keep things *out* of memory. Most conversation is not worth keeping. See [concepts/consolidation.md](concepts/consolidation.md).
 
