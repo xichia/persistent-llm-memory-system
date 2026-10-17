@@ -167,7 +167,7 @@ def cover(c):
     path.close()
     c.drawPath(path, fill=1, stroke=0)
     c.setFillColor(GOLD)
-    tracked(c, 'ONE FOLDER  ·  THREE PROJECT FILES', W / 2, 92, spacing=1, centered=True)
+    tracked(c, 'MAKE CONTEXT VISIBLE. KEEP WORK ALIGNED.', W / 2, 92, spacing=1, centered=True)
     c.showPage()
 
 
