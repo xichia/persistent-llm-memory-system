@@ -2,11 +2,5 @@
 Thumbs.db
 *~
 *.swp
-.idea/
-.vscode/
-
-# Disposable retrieval indexes (rebuild from Markdown)
-memory.db
-*.sqlite
-*.embeddings
-.cache/
+__pycache__/
+*.pyc

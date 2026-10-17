@@ -1,13 +1,3 @@
-# Current state
+# Skill-share
 
-- Planning attendance: 12 people. Individual attendance confirmations have not been recorded.
-- Current total budget: $40.
-- Venue: unknown; no booking made.
-- Date: undecided.
-- Spending committed: none recorded.
-
-## Next action
-
-Ask the organiser whether a free room is available for 12 people, including any conditions of use. Record the response before choosing a venue or allocating money.
-
-The previous $60 budget is superseded; see [decisions](decisions.md). Remaining work is in [tasks](tasks.md).
+The fictional project is to host a skill-share for 12 people. Its current budget is $40, and affordability is a constraint. No venue or date is known, and nothing is booked. The next useful step is to find out whether a free room is available.

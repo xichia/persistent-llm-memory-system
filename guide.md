@@ -1,109 +1,63 @@
-# Work with Codex from a folder
+# The Living Repository
 
-A chat is a useful place to think. A folder gives that thinking somewhere to live.
+## 1. Give context a home
 
-Keep your plans, decisions, and current work in Markdown (`.md`) files. Codex can read the relevant files, help with a task, and update them. When you return in a fresh chat, the files give you a starting point without retelling the whole story.
+A chat helps you think through a project, but details are easy to lose when you start another. A small folder of Markdown files keeps current work, decisions, and next steps. You can read and correct them, then ask Codex to use them when you return.
 
-The benefits are practical:
-
-- **Continuity:** the latest plan survives a change of chat.
-- **Visibility:** you can open a file and see what Codex is relying on.
-- **Control:** correct a mistake or remove an outdated fact in its file.
-- **Organization:** each project has a home for its state, decisions, and next steps.
-- **Portability:** the work is ordinary text in folders you can copy and keep.
-
-Think of this as a repository of your work: a place to collect and maintain it. Start with an ordinary folder. You do not need to set up Git or publish anything to use this guide.
-
-## 1. Copy the starter folder
-
-In Finder or File Explorer, copy this repository's entire [structure](structure/) folder somewhere you keep your work. Rename the copy `my-ai-workspace`.
-
-Copy the whole folder so its instructions and links stay together. Inside your copy, the layout looks like this:
+Markdown files end in `.md`. They are plain text with headings and lists, easy to read, edit, and move between tools. The starter has a map, instructions for Codex, and three project files:
 
 ```text
 my-ai-workspace/
-├── README.md                 Start here
-├── AGENTS.md                 Instructions for Codex
-├── index.md                  Map of the files
-├── person/                   Your relevant preferences and context
-├── projects/
-│   └── example-project/
-│       ├── overview.md       Purpose and constraints
-│       ├── state.md          Current position and next step
-│       ├── decisions.md      Choices and their reasons
-│       ├── research.md       Findings and sources
-│       ├── tasks.md          Work still to do
-│       └── log/              Dated history, when useful
-├── knowledge/                Notes useful across projects
-└── system/                   Rules for maintaining the files
+├── README.md                         Folder map
+├── AGENTS.md                         Guidance for Codex
+└── projects/
+    └── my-project/
+        ├── state.md                  Purpose, constraints, current facts, unknowns, next step
+        ├── decisions.md              Choices and why they changed
+        └── tasks.md                  Open and next actions
 ```
 
-You can leave most files as templates until you need them. Begin with one project.
+[Download this repository](https://github.com/xichia/persistent-llm-memory-system) from GitHub with **Code → Download ZIP**. Extract the ZIP, open the extracted folder, and copy the entire `starter` folder to a place you keep your work. Rename that copy `my-ai-workspace`. Start with the files it contains; add more only when a real project needs them. Keep a backup copy of the folder before making your first changes. If an edit goes wrong, use it to restore the original text.
 
-Before practice edits, duplicate `my-ai-workspace` as a backup. If an edit goes wrong, compare the changed file with the backup and restore the affected text.
+The files carry memory between chats. Ask Codex to read what it needs when you begin. Save settled facts and choices, not every conversation: current facts, unknowns, and next step in `state.md`; choices and reasons in `decisions.md`; open actions in `tasks.md`.
 
-## 2. Give Codex access to the folder
+## 2. Work from the folder
 
-Open the Codex desktop app and add a local project connected to `my-ai-workspace`. Choose local work in that folder for this walkthrough. You need the desktop app installed and signed in with access to Codex; opening the public repository in a web browser does not give Codex access to your copied folder. If the project already exists, its menu provides **Edit project** to add or change its folders. Make your workspace the primary folder so new chats start there. Labels can vary by app version; see the [official project instructions](https://learn.chatgpt.com/docs/projects).
+Use the Codex desktop app, installed and signed in. Create a local project for `my-ai-workspace`. If you already have a project, open its project menu, choose **Edit project**, then **Add folder**. Set your workspace folder as the primary folder so new chats use it. The [official project instructions](https://learn.chatgpt.com/docs/projects) explain project folders. Opening files in a browser does not give Codex access to your local copy.
 
-Start a chat inside that project. Ask Codex to confirm its location before changing files:
+Before editing, ask Codex to confirm the folder and read its guidance and map. For example:
 
 ```text
-Tell me the exact folder you are working in. It should be my-ai-workspace.
-Read AGENTS.md and index.md, then projects/example-project/overview.md
-and state.md. Summarize what you found. Do not change files yet.
+Confirm the folder you are working in is my-ai-workspace. Read AGENTS.md
+and README.md, then the three files in projects/my-project/. Summarize them.
+Do not change anything yet.
 ```
 
-If it cannot find those files, reconnect the folder before continuing.
-
-## 3. Do one useful task
-
-For a first example, give Codex a small plan to maintain. The starter asks Codex to show proposed edits before saving them. Review the proposal, request corrections if needed, then tell it to apply the agreed changes. Use that same review step for later updates and the final handoff.
+If the files are missing, reconnect the folder. Otherwise, try one small task:
 
 ```text
-Turn example-project into a skill-share planning project called skill-share.
-There will be 12 people. The total project budget is $60. We have not chosen
-a venue. Replace the template content with those facts and update index.md
-to point to the renamed folder. Suggest a simple session plan within the budget;
-label any estimated costs. Show me which files changed and what you saved.
+Rename projects/my-project/ to projects/skill-share/. Update the README links.
+Plan a skill-share for 12 people, with a $60 total budget and venue unknown.
+Save its purpose and facts in state.md, and next actions in tasks.md.
+Keep unconfirmed details marked unknown.
 ```
 
-Ask Codex, “Open the saved project state.md in the app so I can inspect it.” Read the text in the file panel. If you spot an error, say, “Correct this sentence in state.md: …; show me the saved file again.” Check the actual files Codex changed. The overview should describe the skill-share, the state should retain the unknown venue, and the tasks should include choosing one. Suggestions should remain suggestions until you accept them.
-
-Then try a change:
+Ask Codex to open the actual saved `state.md` in the app. Read it, then try a change:
 
 ```text
-The total project budget is now $40. Revise the plan for 12 people, record the
-budget change in decisions.md, and update the current state and tasks.
-Keep the venue marked as unknown. Check that no current plan still uses $60.
+The total budget is now $40 to keep the session affordable.
+Update the skill-share state and tasks. Record the change and reason in
+its decisions.md. Keep the venue unknown.
 ```
 
-The old budget can remain in the decision history; the current plan should use $40.
+Open the saved files and correct anything inaccurate. The current plan should use $40; the old $60 belongs only in the decision history.
 
-You can compare your result with the fictional [worked example](example/README.md).
+## 3. Save your next starting point
 
-## 4. Save a handoff
+At the end of a chat, ask Codex to leave a short handoff in `projects/skill-share/state.md`: current facts, unknowns, and the next useful step. Keep open actions in `projects/skill-share/tasks.md` and choices with reasons in `projects/skill-share/decisions.md`. Open the actual saved files and check them.
 
-Before leaving, ask:
+In a fresh chat in the same local project, ask Codex to read `AGENTS.md`, `README.md`, and those three project files. Ask it to report the headcount, current budget, venue status, and next step. It should find 12 people, $40, and an unknown venue without needing you to retell the story.
 
-```text
-Save a short handoff in projects/skill-share/state.md: current facts,
-unresolved questions, the next useful step, and a pointer to decisions.md. Update tasks.md
-if needed. Read back the saved files and summarize what changed.
-```
+The [worked example](example/README.md) shows the saved result.
 
-Open those files yourself. A message saying “saved” is less useful than seeing the right information on disk.
-
-## 5. Resume in a fresh chat
-
-Start another chat in the same local project:
-
-```text
-Confirm you are working in my-ai-workspace. Read AGENTS.md and index.md,
-then projects/skill-share/overview.md, state.md, decisions.md, and tasks.md.
-Tell me the current headcount, budget, unresolved questions, and next step.
-```
-
-It should find 12 people, a $40 budget, and an undecided venue from the files. If it does not, correct the files before continuing.
-
-Repeat the same cycle for real work: read the relevant files, complete one task, review the changes, and save the next starting point.
+Keep only context that is useful, and leave sensitive information out. Local files stay in your folder, but an online AI may process the contents of files it reads.
