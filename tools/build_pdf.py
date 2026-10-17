@@ -72,12 +72,13 @@ class CodeCard(Flowable):
         # Keep portable box drawing even with PDF base fonts.
         text = text.translate(str.maketrans({'├': '+', '└': '+', '─': '-', '│': '|'}))
         self.text = text
+        self.is_tree = '\n+-- ' in text
 
     def wrap(self, width, height):
         self.width = width
         # Compact tree labels; full meanings stay in the following paragraph.
         text = self.text
-        if text.startswith('my-ai-workspace/'):
+        if self.is_tree:
             text = re.sub(r'(?<=\S) {3,}[^\n]+', '', text)
         if any(pdfmetrics.stringWidth(line, FONT['Mono'], CODE.fontSize) > width - 28 for line in text.splitlines()):
             raise ValueError('Code line too wide; wrap the source prompt.')

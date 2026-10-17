@@ -7,7 +7,7 @@ A chat helps you think through a project, but details are easy to lose when you 
 Markdown files end in `.md`. They are plain text with headings and lists, easy to read, edit, and move between tools. The starter has a map, instructions for Codex, and three project files:
 
 ```text
-my-ai-workspace/
+starter/
 ├── README.md                         Folder map
 ├── AGENTS.md                         Guidance for Codex
 └── projects/
@@ -17,19 +17,19 @@ my-ai-workspace/
         └── tasks.md                  Open and next actions
 ```
 
-[Download this repository](https://github.com/xichia/persistent-llm-memory-system) from GitHub with **Code → Download ZIP**. Extract the ZIP, open the extracted folder, and copy the entire `starter` folder to a place you keep your work. Rename that copy `my-ai-workspace`. Start with the files it contains; add more only when a real project needs them. Keep a backup copy of the folder before making your first changes. If an edit goes wrong, use it to restore the original text.
+[Download this repository](https://github.com/xichia/persistent-llm-memory-system) from GitHub with **Code → Download ZIP**. Extract the ZIP, open the extracted folder, and copy the entire `starter` folder to a place you keep your work. Keep its name or choose your own. Start with the files it contains; add more only when a real project needs them. Keep a backup copy of the folder before making your first changes. If an edit goes wrong, use it to restore the original text.
 
 The files carry memory between chats. Ask Codex to read what it needs when you begin. Save settled facts and choices, not every conversation: current facts, unknowns, and next step in `state.md`; choices and reasons in `decisions.md`; open actions in `tasks.md`.
 
 ## 2. Work from the folder
 
-Use the Codex desktop app, installed and signed in. Create a local project for `my-ai-workspace`. If you already have a project, open its project menu, choose **Edit project**, then **Add folder**. Set your workspace folder as the primary folder so new chats use it. The [official project instructions](https://learn.chatgpt.com/docs/projects) explain project folders. Opening files in a browser does not give Codex access to your local copy.
+Use the Codex desktop app, installed and signed in. Create a local project for your copied folder. If you already have a project, open its project menu, choose **Edit project**, then **Add folder**. Set your workspace folder as the primary folder so new chats use it. The [official project instructions](https://learn.chatgpt.com/docs/projects) explain project folders. Opening files in a browser does not give Codex access to your local copy.
 
 Before editing, ask Codex to confirm the folder and read its guidance and map. For example:
 
 ```text
-Confirm the folder you are working in is my-ai-workspace. Read AGENTS.md
-and README.md, then the three files in projects/my-project/. Summarize them.
+Show the full path of the folder you are working in. Read AGENTS.md and
+README.md, then the three files in projects/my-project/. Summarize them.
 Do not change anything yet.
 ```
 
