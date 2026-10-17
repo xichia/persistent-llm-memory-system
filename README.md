@@ -8,12 +8,12 @@ Keep current facts, decisions, and next steps in a small Markdown tree. Read les
 
 ## Start
 
-Download this repository with **Code → Download ZIP** and extract it. Copy [starter/](starter/) somewhere you keep your work and open that copy as a local project in the Codex app.
+Download this repository with **Code → Download ZIP** and extract it. Copy [my-ai-workspace/](my-ai-workspace/) somewhere you keep your work and open that copy as a local project in the Codex app.
 
-The folder can have any name. The starter has five files: a map, instructions for Codex, and three project notes. [The worked example](example/) shows a fictional skill-share after its budget changes.
+The workspace is already named and has five files: a map, instructions for Codex, and three project notes. [The worked example](example/) shows a fictional skill-share after its budget changes.
 
 ```text
-starter/
+my-ai-workspace/
 ├── README.md
 ├── AGENTS.md
 └── projects/my-project/

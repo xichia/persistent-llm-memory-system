@@ -7,7 +7,7 @@ A chat helps you think through a project, but details are easy to lose when you 
 Markdown files end in `.md`. They are plain text with headings and lists, easy to read, edit, and move between tools. The starter has a map, instructions for Codex, and three project files:
 
 ```text
-starter/
+my-ai-workspace/
 ├── README.md                         Folder map
 ├── AGENTS.md                         Guidance for Codex
 └── projects/
@@ -17,7 +17,7 @@ starter/
         └── tasks.md                  Open and next actions
 ```
 
-[Download this repository](https://github.com/xichia/persistent-llm-memory-system) from GitHub with **Code → Download ZIP**. Extract the ZIP, open the extracted folder, and copy the entire `starter` folder to a place you keep your work. Keep its name or choose your own. Start with the files it contains; add more only when a real project needs them. Keep a backup copy of the folder before making your first changes. If an edit goes wrong, use it to restore the original text.
+[Download this repository](https://github.com/xichia/persistent-llm-memory-system) from GitHub with **Code → Download ZIP**. Extract the ZIP, open the extracted folder, and copy the entire `my-ai-workspace` folder to a place you keep your work. Start with the files it contains; add more only when a real project needs them. Keep a backup copy of the folder before making your first changes. If an edit goes wrong, use it to restore the original text.
 
 The files carry memory between chats. Ask Codex to read what it needs when you begin. Save settled facts and choices, not every conversation: current facts, unknowns, and next step in `state.md`; choices and reasons in `decisions.md`; open actions in `tasks.md`.
 
