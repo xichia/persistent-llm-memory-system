@@ -1,4 +1,7 @@
-"""Render guide.md as a four-page field guide. Requires reportlab."""
+"""Render guide.md; optionally refresh both PDF covers. Requires reportlab."""
+from argparse import ArgumentParser
+from hashlib import sha256
+from io import BytesIO
 from pathlib import Path
 import os
 import re
@@ -120,7 +123,7 @@ def tracked(c, text, x, y, size=8, spacing=2, centered=False):
     c.restoreState()
 
 
-def cover(c):
+def cover(c, edition='QUICK START GUIDE'):
     c.setFillColor(TEAL)
     c.rect(0, 0, W, H, fill=1, stroke=0)
     c.setStrokeColor(colors.HexColor('#365b59'))
@@ -131,7 +134,7 @@ def cover(c):
     c.setLineWidth(.55)
     c.rect(49, 114, W - 98, H - 174, fill=0, stroke=1)
     c.setFillColor(GOLD)
-    tracked(c, 'A PRACTICAL FIELD GUIDE', W / 2, H - 105, centered=True)
+    tracked(c, edition, W / 2, H - 105, centered=True)
     c.setFont(FONT['Italic'], 24)
     c.drawCentredString(W / 2, H - 175, 'The')
     c.setFont(FONT['Serif'], 43)
@@ -169,6 +172,42 @@ def cover(c):
     c.setFillColor(GOLD)
     tracked(c, 'MAKE CONTEXT VISIBLE. KEEP WORK ALIGNED.', W / 2, 92, spacing=1, centered=True)
     c.showPage()
+
+
+def update_extended_cover():
+    """Replace only the supplied guide's cover, preserving its page references."""
+    from pypdf import PdfReader, PdfWriter
+    from pypdf.generic import NameObject
+
+    output = OUTPUT.with_name('extended-course-guide.pdf')
+    buffer = BytesIO()
+    c = canvas.Canvas(buffer, pagesize=A4, pageCompression=1, invariant=1)
+    cover(c, 'EXTENDED COURSE GUIDE')
+    c.save()
+
+    replacement = PdfReader(buffer).pages[0]
+    metadata = {
+        '/Title': 'The Living Repository - Extended course guide',
+        '/Subject': 'Project memory with Codex: six lessons with Git and GitHub',
+        '/LivingRepositoryCoverHash': sha256(buffer.getvalue()).hexdigest(),
+    }
+    reader = PdfReader(output)
+    if all(reader.metadata.get(key) == value for key, value in metadata.items()):
+        print(output)
+        return
+    writer = PdfWriter(clone_from=reader)
+    page = writer.pages[0]
+    page.replace_contents(replacement.get_contents())
+    page[NameObject('/Resources')] = replacement['/Resources'].clone(writer)
+    page.mediabox = replacement.mediabox
+    page.rotation = replacement.rotation
+    writer.add_metadata(metadata)
+    writer.compress_identical_objects()
+    temporary = output.with_suffix('.tmp.pdf')
+    with temporary.open('wb') as stream:
+        writer.write(stream)
+    temporary.replace(output)
+    print(output)
 
 
 def frame(c, number, title):
@@ -224,7 +263,7 @@ def main():
     sections = [(chunks[i], chunks[i + 1].strip()) for i in (1, 3, 5)]
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     c = canvas.Canvas(str(OUTPUT), pagesize=A4, pageCompression=1, invariant=1)
-    c.setTitle('The Living Repository - Project memory with Codex')
+    c.setTitle('The Living Repository - Quick start guide')
     c.setAuthor('The Living Repository')
     c.setSubject('A concise guide to persistent project context in Markdown')
     cover(c)
@@ -248,4 +287,10 @@ def main():
 
 
 if __name__ == '__main__':
+    parser = ArgumentParser(description=__doc__)
+    parser.add_argument('--extended-cover', action='store_true',
+                        help='Also refresh the extended guide cover; requires pypdf.')
+    args = parser.parse_args()
     main()
+    if args.extended_cover:
+        update_extended_cover()
