@@ -25,3 +25,9 @@ my-ai-workspace/
 Read the relevant files. Do one task. Check the saved result. Leave a starting point for next time.
 
 No Git knowledge is needed. Keep your working copy separate from this public teaching repository.
+
+## More depth
+
+The [extended course guide (PDF, 30 pages)](output/pdf/extended-course-guide.pdf) adds six lessons, reusable prompts, and Git/GitHub review and recovery exercises.
+
+It uses a six-file workspace and Codex in VS Code with GitHub Desktop. Follow [the short guide](guide.md) for this repository's starter layout and Codex app setup. The additional course-pack downloads mentioned in the PDF are not included here.
